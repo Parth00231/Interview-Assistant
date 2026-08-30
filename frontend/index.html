@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Candidate Interview Assistant | Parth Rastogi</title>
+  <!-- Google Fonts & FontAwesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Marked.js for parsing markdown response -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo-icon">
+          <i class="fa-solid fa-robot"></i>
+        </div>
+        <div class="brand-text">
+          <h2>Candidate AI</h2>
+          <span class="badge">Groq & FastAPI Powered</span>
+        </div>
+      </div>
+
+      <div class="candidate-card">
+        <div class="avatar-wrapper">
+          <div class="avatar">PR</div>
+          <span class="status-indicator online"></span>
+        </div>
+        <div class="candidate-info">
+          <h3>Parth Rastogi</h3>
+          <p class="role">Software Engineer Candidate</p>
+          <div class="tags">
+            <span class="tag">C++</span>
+            <span class="tag">Python</span>
+            <span class="tag">React</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">AI / GenAI</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-section">
+        <h4><i class="fa-solid fa-lightbulb"></i> Suggested HR Questions</h4>
+        <div class="prompt-chips">
+          <button class="chip" data-question="What are your key technical skills and programming languages?">
+            <i class="fa-solid fa-code"></i> Technical Skills
+          </button>
+          <button class="chip" data-question="Tell me about your work experience and internships.">
+            <i class="fa-solid fa-briefcase"></i> Work Experience
+          </button>
+          <button class="chip" data-question="What projects have you worked on recently?">
+            <i class="fa-solid fa-diagram-project"></i> Projects Built
+          </button>
+          <button class="chip" data-question="What is your educational background?">
+            <i class="fa-solid fa-graduation-cap"></i> Education
+          </button>
+          <button class="chip" data-question="Why are you a strong candidate for this role?">
+            <i class="fa-solid fa-star"></i> Strengths Summary
+          </button>
+        </div>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="status-box">
+          <i class="fa-solid fa-circle-check"></i>
+          <span>Backend Ready (Port 8000)</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Chat Area -->
+    <main class="chat-area">
+      <header class="chat-header">
+        <div class="header-title">
+          <h1>Interview Assistant</h1>
+          <p>Ask any question to interview candidate <strong>Parth Rastogi</strong> based on verified resume data.</p>
+        </div>
+        <div class="header-actions">
+          <button id="clear-chat-btn" class="btn-secondary" title="Clear Chat">
+            <i class="fa-solid fa-trash-can"></i> Clear
+          </button>
+        </div>
+      </header>
+
+      <div class="chat-messages" id="chat-messages">
+        <!-- Welcome Message -->
+        <div class="message assistant-message">
+          <div class="message-avatar">
+            <i class="fa-solid fa-robot"></i>
+          </div>
+          <div class="message-content">
+            <div class="sender-name">Candidate Assistant</div>
+            <div class="text">
+              Hello! I am an AI assistant representing <strong>Parth Rastogi</strong>. I have analyzed his full resume and am ready for your interview questions. What would you like to know about Parth's experience, skills, projects, or background?
+            </div>
+            <div class="message-time">Just now</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chat Input Form -->
+      <footer class="chat-input-wrapper">
+        <form id="chat-form" class="chat-form">
+          <div class="input-container">
+            <input 
+              type="text" 
+              id="user-input" 
+              placeholder="Ask a question about the candidate (e.g. 'What projects have you completed?')..." 
+              autocomplete="off"
+              required 
+            />
+            <button type="submit" id="send-btn" class="send-btn">
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </div>
+        </form>
+      </footer>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
